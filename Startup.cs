@@ -26,7 +26,7 @@ namespace TrackIt
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<ExpenseDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MoviesDbConnectionString")));
+            services.AddDbContext<ExpenseDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("TrackItDBConnectionString")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

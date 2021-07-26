@@ -12,7 +12,10 @@ namespace TrackIt.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            base.OnConfiguring(optionsBuilder); 
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("Server=HOPE-NDUDIM\\SQLEXPRESS;Database=TrackItDB;Trusted_Connection=True;MultipleActiveResultSets=true");
+            }
         }
     }
 }
